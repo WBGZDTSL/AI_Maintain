@@ -1,3 +1,5 @@
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
 import lifelines
 import matplotlib.pyplot as plt
 from lifelines.datasets import load_waltons,load_rossi
@@ -7,8 +9,6 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 import pickle
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
 #%%
 #KaplanMeierFitter Moedl
 df = load_waltons()  # returns a Pandas DataFrame
@@ -27,7 +27,7 @@ rossi.head()
 cph = CoxPHFitter()
 cph.fit(rossi, duration_col='week', event_col='arrest')#model fitting
 cph.plot()
-plt.show()
+#plt.show()
 #
 cph.print_summary(model="untransformed variables", decimals=3)
 #
@@ -58,7 +58,7 @@ cph.fit(rossi_strata_age, 'week', 'arrest', strata=['age_strata', 'wexp'])
 #
 cph.print_summary(3, model="stratified age and wexp")
 cph.plot()
-plt.show()
+#plt.show()
 #
 cph.check_assumptions(rossi_strata_age)
 #
@@ -79,7 +79,7 @@ ctv.fit(rossi_long,
         strata=['wexp']
 #
 ctv.plot()
-plt.show()
+# plt.show()
 
 
 
