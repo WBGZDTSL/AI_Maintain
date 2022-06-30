@@ -23,3 +23,6 @@ a3=(a2-a1).days
 #     return (a2 - d1)/24
 #count_differ_days("20240622")
 #%%
+df = pd.read_excel('chiller_data_preprocessed_v1.1.xlsx', sheet_name='Sheet1', header=0, index_col=None)
+# a = df['Predict_End_date']
+end_date = [int(stamp) for stamp in df['Predict_End_date'].unique()]
