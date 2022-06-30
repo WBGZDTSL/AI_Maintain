@@ -1,5 +1,5 @@
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
+# %matplotlib inline
+# %config InlineBackend.figure_format = 'retina'
 import lifelines
 import matplotlib.pyplot as plt
 from lifelines.datasets import load_waltons,load_rossi
@@ -16,7 +16,7 @@ T = df['T']
 E = df['E']
 kmf = KaplanMeierFitter()
 kmf.fit(T, event_observed=E)  # more succiently, kmf.fit(T,E)
-kmf.survival_function_
+var = kmf.survival_function_
 kmf.median_survival_time_
 kmf.plot()
 plt.show()
@@ -76,7 +76,7 @@ ctv.fit(rossi_long,
         event_col='arrest',
         start_col='start',
         stop_col='stop',
-        strata=['wexp']
+        strata=['wexp'])
 #
 ctv.plot()
 # plt.show()
