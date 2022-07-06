@@ -27,8 +27,8 @@ rossi.head()
 cph = CoxPHFitter()
 cph.fit(rossi, duration_col='week', event_col='arrest')#model fitting
 cph.plot()
-#plt.show()
-#
+plt.show()
+#%%
 cph.print_summary(model="untransformed variables", decimals=3)
 #
 cph.check_assumptions(rossi, p_value_threshold=0.05, show_plots=True)
@@ -58,8 +58,8 @@ cph.fit(rossi_strata_age, 'week', 'arrest', strata=['age_strata', 'wexp'])
 #
 cph.print_summary(3, model="stratified age and wexp")
 cph.plot()
-#plt.show()
-#
+plt.show()
+#%%
 cph.check_assumptions(rossi_strata_age)
 #
 from lifelines.utils import to_episodic_format
@@ -79,7 +79,7 @@ ctv.fit(rossi_long,
         strata=['wexp'])
 #
 ctv.plot()
-# plt.show()
+plt.show()
 
 
 
