@@ -10,6 +10,11 @@ import numpy as np
 from sklearn import preprocessing
 import pickle
 #%%
+rossi = load_rossi()
+cph = CoxPHFitter()
+cph.fit(rossi, duration_col='week', event_col='arrest')
+cph.print_summary()  # access the individual results using cph.summary
+#%%
 #KaplanMeierFitter Moedl
 df = load_waltons()  # returns a Pandas DataFrame
 T = df['T']

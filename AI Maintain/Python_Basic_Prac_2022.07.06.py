@@ -10,6 +10,7 @@ import numpy as np
 import chart_studio.plotly as py
 import seaborn as sns
 import plotly.express as px
+import random
 # %matplotlib inline
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 #%%
@@ -140,19 +141,25 @@ account_login()
 #%%
 password_list=["*#*#","12345"]
 def account_login():
-    password=input("Password: ")
-    password_correct = password= password_list[-1]
-    password_reset = password = password_list[0]
-    if password_correct:
-        print("Login Success!")
-    elif password_reset:
-        new_password=input("New_password: ")
-        password_list.append(new_password)
-        print("Your password has changed successfully!")
-        account_login()
+    tries=3
+    while tries>0:
+        password=input("Password: ")
+        password_correct = password= password_list[-1]
+        password_reset = password = password_list[0]
+        if password_correct:
+            print("Login Success!")
+        elif password_reset:
+            new_password=input("New_password: ")
+            password_list.append(new_password)
+            print("Your password has changed successfully!")
+            account_login()
+        else:
+            print("Wrong password or invalid input!")
+            tries=tries-1
+            print(tries,"times left")
     else:
-        print("Wrong password or invalid input!")
-        account_login()
+        print("Your account has been suspened")
+
 #%%
 # for i in [1,2,3,5]:
 #     print(i)
@@ -162,3 +169,141 @@ for num in range(1,11):
 songlist=['Holy Diver','Thunderstruck','Rebel Rebel']
 for song in songlist:
     if song == songlist[0]:
+        print(song," -Dio")
+    elif   song == songlist[1]:
+        print(song, " -AC/DC")
+    else:
+        print(song, " -David Bowie")
+#%%
+for i in range(1,10):
+    for j in range(1,10):
+        print('{} * {} = {}'.format(i,j,i*j))
+#%%
+count=0
+while True:
+    print("Repeat this line!")
+    count = count +1
+    if count == 5:
+        break
+#%%
+a_list=[1,2,3]
+print(sum(a_list))
+point1= random.randrange(1,7)
+point2= random.randrange(1,7)
+point3= random.randrange(1,7)
+#%%
+def roll_dice(numbers=3,points=None):
+    print('<<<< ROLL THE DICE!>>>>')
+    if points is None:
+        points=[]
+    while numbers>0:
+        point = random.randrange(1,7)
+        points.append(point)
+        numbers=numbers-1
+    return points
+
+def roll_result(total):
+    isBig = 11 <= total <= 18
+    isSmall = 3 <= total <= 10
+    if isBig:
+        return "Big "
+    elif isSmall:
+        return  "small"
+
+def start_game():
+    print("<<<< GAME START>>>>")
+    choices = ['Big','Small']
+    your_choices = input('Big or Small: ')
+    if your_choices in choices:
+        points=roll_dice()
+        total=sum(points)
+        youWin= your_choices == roll_result(total)
+        if youWin:
+            print('The points are ',points,'You win !')
+        else:
+            print('The points are ',points,'You lose !')
+    else:
+        print('Invalid Words!')
+        start_game()
+
+#%%List Introduce
+Weekday = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+all_in_list= [1,
+              1.0,
+              'a word',
+              print(1),
+              True,
+              [1,2],
+
+              (1,2),
+              {'key':'value'}
+]
+
+fruit = ['pineapple','pear']
+fruit.insert(6,'grape')
+print(fruit)
+
+fruit[0:0] = ['Orange']
+fruit.remove('grape')
+fruit[0]='Grapefruit'
+del fruit[0:2]
+#%% Dictionary
+NASDAQ_code= {
+    'BAIDU':"Baidu",
+    'SINA': 'Sina',
+    # 'YOKU':'Youku'
+}
+NASDAQ_code['YOUKU']= 'Youku'
+NASDAQ_code.update({'FB':'Bacebook','TSLA':'Tesla'})
+del NASDAQ_code['FB']
+#%% Tuple
+letters = ('a','b','c','d','e','f')
+letters[0]
+#%% Set
+a_set={1,2,3,5}
+a_set.add(4)
+a_set.discard(1)
+#%%
+num_list = [6,2,7,4,1,3,5]
+a1=sorted(num_list)
+a_reversed_order=sorted(num_list,reverse=True)
+del num
+#%%
+for a,b in zip(num,str):
+    print(b,'is',a)
+
+#%%comprehension
+a= [i**2 for i in range(4)]
+c= [j+1 for j in range(1,10)]
+k= [n for n in range(1,10) if n%2 == 0]
+z= [letter.lower() for letter in "ABCDEFGHIJKLMN"]
+#%%
+for num,z in enumerate(z):
+    print(z,' is ',num+1)
+#%% Class
+class CocaCola():
+    # formula = ['caffeine','sugar','water','soda']
+# coke_for_me = CocaCola()
+# coke_for_you =CocaCola()
+# coke_for_you.formula
+# coke_for_china = CocaCola()
+# coke_for_china.local_logo = '可口可乐'
+#     def __init__(self):
+#         self.local_logo = '可口可乐'
+#     def __init__(self):
+#         for element in self.formula:
+#             print('Coke has {}!'.format(element))
+#
+#     def drink(self):
+#         print('Energy!')
+
+# coke = CocaCola()
+# print(coke.local_logo)
+    calories    = 140
+    sodium      = 45
+    total_card  = 39
+    caffeine    = 34
+    ingredients =  [
+
+    ]
