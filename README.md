@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/WBGZDTSL/AI_Maintain">
-    <img src="C:\Users\jweiban\OneDrive - Johnson Controls\Documents\GitHub\AI_Maintain\Pic\Readme_image\repair.png" alt="Logo" width="80" height="80">
+    <img src="Pic/Readme_image/repair.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">AI-MAINTAIN</h3>
