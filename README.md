@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/WBGZDTSL/AI_Maintain">
-    <img src="Pic\Readme_image\repair.png" alt="Logo" width="80" height="80">
+    <img src="C:\Users\jweiban\OneDrive - Johnson Controls\Documents\GitHub\AI_Maintain\Pic\Readme_image\repair.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">AI-MAINTAIN</h3>
@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Background
 
-[![Air Conditioner Maintenance](Pic\Readme_image\Air Conditioner Maintenance.jpg)](https://www.penguincool.com/wp-content/uploads/2018/12/63086869_m.jpg)
+[<img alt="Air Conditioner Maintenance" src="Pic/Readme_image/Air Conditioner Maintenance.jpg"/>](https://www.penguincool.com/wp-content/uploads/2018/12/63086869_m.jpg)
 
 The company finds it’s costly to arrange a worker to repair a chiller without knowing which parts are failed inside. The worker will have an issue identifying what parts to bring when scheduling their repair job and is time-consuming to fetch the broken parts twice. Therefore, managers first need to know the usage of parts, and can monitor the remaining life of parts in real time.
 
